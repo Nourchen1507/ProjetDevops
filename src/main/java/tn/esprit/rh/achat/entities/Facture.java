@@ -25,6 +25,7 @@ import lombok.Setter;
 public class Facture implements Serializable {
 	private static final long serialVersionUID = 1L;
 // testttttttttttttttt !!!!!!!!! ilyes
+	//test2
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFacture;

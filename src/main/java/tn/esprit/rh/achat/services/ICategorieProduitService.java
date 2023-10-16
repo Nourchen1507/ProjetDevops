@@ -6,6 +6,9 @@ import java.util.List;
 
 
 public interface ICategorieProduitService {
+	//////////////////::
+	///////////////////////////////////
+	/////////////////
 
 	List<CategorieProduit> retrieveAllCategorieProduits();
 

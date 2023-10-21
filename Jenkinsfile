@@ -17,7 +17,13 @@ pipeline {
 
         stage('Analyse sonar') {
             steps {
-                 sh 'mvn sonar:sonar -Dsonar.login=sqa_fb71cc4c2419b6108b8f63385ce7c01488e332ba'
+                sh 'mvn sonar:sonar -Dsonar.login=sqa_fb71cc4c2419b6108b8f63385ce7c01488e332ba'
+            }
+        }
+        
+        stage('Build and Deploy') {
+            steps {
+                sh 'mvn deploy -DskipTests'
             }
         }
     }

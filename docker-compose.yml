@@ -16,7 +16,7 @@ services:
     image: amenbenkhalifa/devops_project1:SpringImage
     container_name: spring
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/achatdb?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD:
     ports:

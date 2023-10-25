@@ -4,10 +4,10 @@ services:
     image: 'mysql:5.7'
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD:
     ports:
       - "3306:3306"
     volumes:
@@ -20,7 +20,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_PASSWORD:
     ports:
       - "8282:8282"
     depends_on:

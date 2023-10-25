@@ -3,6 +3,7 @@ services:
   mysql:
     image: 'mysql:5.7'
     container_name: mysql
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: achatdb
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
@@ -15,6 +16,7 @@ services:
   spring-app:
     image: amenbenkhalifa/devops_project1:SpringImage
     container_name: spring
+    restart:  on-failure
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
       SPRING_DATASOURCE_USERNAME: root
@@ -23,5 +25,13 @@ services:
       - "8282:8282"
     depends_on:
       - mysql
+  angular-app:
+    image: amenbenkhalifa/devops_project1:AngularImage
+    container_name: angular
+    restart: on-failure
+    ports:
+      - "4200:80"
+    depends_on:
+      - spring-app
 volumes:
   db:

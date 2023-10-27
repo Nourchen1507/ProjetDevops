@@ -1,0 +1,13 @@
+version: '3'
+services:
+    timesheet-devops:
+        image: timesheet-devops:1.0
+        ports:
+            - "8282:8282"
+        volumes:
+            - /chemin/vers/votre/volume:/chemin/dans/le/conteneur
+
+    mysql:
+        image: mysql
+        ports:
+            - "3306:3306"

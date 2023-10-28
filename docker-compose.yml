@@ -1,0 +1,37 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:8.0.32
+    container_name: mysqldb
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: devopsback
+    networks:
+      - mon_reseau # Utilisez le même nom de réseau ici
+    ports:
+      - "3307:3306"   # port conteneur: port hote
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-app
+    depends_on:
+      - mysqldb
+    networks:
+      - mon_reseau  # Utilisez le même nom de réseau ici
+    ports:
+      - "8083:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/devopsback  # Utilisez le nom du service MySQL comme hôte
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ""
+
+networks:
+  mon_reseau:
+    driver: bridge  # Vous pouvez spécifier d'autres options de réseau si nécessaire
+
+volumes:
+  mysql_data:

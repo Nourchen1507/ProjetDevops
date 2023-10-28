@@ -23,7 +23,7 @@ services:
     networks:
       - mon_reseau  # Utilisez le même nom de réseau ici
     ports:
-      - "8083:8082"
+      - "8083:8282"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/devopsback  # Utilisez le nom du service MySQL comme hôte
       SPRING_DATASOURCE_USERNAME: root

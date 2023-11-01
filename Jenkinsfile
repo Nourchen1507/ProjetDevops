@@ -11,7 +11,7 @@ pipeline {
 
         stage('Nettoyage et compilation avec Maven') {
             steps {
-                sh 'mvn clean compile'
+                sh 'mvn clean package'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build de l\'application Spring') {
             steps {
-                sh 'docker build -t achat-1.0.jar .'
+                sh 'docker build -t skander99/achat-1.0.jar .'
             }
         }
 

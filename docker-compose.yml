@@ -1,0 +1,41 @@
+version: '3'
+services:
+  mysql:
+    image: 'mysql:5.7'
+    container_name: mysqlDB
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: achatdb
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+ # Spring Boot Application Service
+  spring-app:
+    image: s1mch/devopsproject:BackImage
+    container_name: SpringBack
+    restart:  on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8282:8282"
+    depends_on:
+      - mysql
+
+  
+
+  # Angular Application Service
+  angular-app:
+    image: s1mch/devopsproject:FrontImage
+    container_name: AngularFront
+    restart: on-failure
+    ports:
+      - "4200:80"
+    depends_on:
+      - spring-app
+volumes:
+  db:

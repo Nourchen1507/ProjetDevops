@@ -1,13 +1,45 @@
-version: '3'
+version: '3.1'
 services:
-    timesheet-devops:
-        image: timesheet-devops:1.0
-        ports:
-            - "8282:8282"
-        volumes:
-            - /chemin/vers/votre/volume:/chemin/dans/le/conteneur
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
-    mysql:
-        image: mysql
-        ports:
-            - "3306:3306"
+    environment:
+      MYSQL_ROO_PASSWORD: root
+      MYSQL_DATABASE: achatdb
+    networks:
+      - mynetworkk
+
+  back:
+    depends_on:
+      - mysql
+    image: achat-1.0.jar
+    container_name: back
+    restart: on-failure
+    ports:
+      - "6868:8282"
+    stdin_open: true
+    tty: true
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_PROFILES_ACTIVE: prod,actuator
+      MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED: "true"
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: prometheus
+    networks:
+      - mynetworkk
+volumes:
+  mysql_data:
+networks:
+  mynetworkk:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16

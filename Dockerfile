@@ -1,4 +1,5 @@
-FROM openjdk:11
-ADD target/timesheet-devops-1.0.jar timesheet-devops-1.0.jar
-ENTRYPOINT ["java","-jar","/timesheet-devops-1.0.jar"]
+FROM openjdk:11-oracle
+ADD target/achat-1.0.jar achat-1.0.jar
+EXPOSE 8282
+ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
 

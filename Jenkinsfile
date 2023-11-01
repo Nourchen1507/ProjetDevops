@@ -23,20 +23,21 @@ pipeline {
 
         stage('Build de l\'application Spring') {
             steps {
-                sh 'docker build -t timesheet-devops:1.0 .'
+                sh 'docker build -t achat-1.0.jar .'
             }
         }
 
         stage('Déploiement en DockerHub') {
             steps {
-                sh 'docker login -u skander99 -p SkanderDockerhub'
-                sh 'docker push skander99/timesheetdevops:1.0'
+                sh 'docker login -u skander99 -p SkanderDockerhub@1'
+                sh 'docker push skander99/achat-1.0.jar'
             }
         }
 
         stage('Lancer Docker Compose') {
             steps {
-                sh 'docker compose up'
+                sh 'docker compose down'
+                sh 'docker compose up -d'
             }
         }
     }

@@ -6,5 +6,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class FournisseurServiceImplMock {
+class FactureServiceImplMock {
 }

@@ -39,7 +39,7 @@ services:
     ports:
       - 9090:9090
     depends_on:
-      - spring-boot-app
+      - spring-app
 
   grafana:
     image: grafana/grafana

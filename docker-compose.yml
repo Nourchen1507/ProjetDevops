@@ -11,19 +11,6 @@ services:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
-  prometheus:
-    image: prom/prometheus
-    network_mode: host
-    container_name: prometheus
-    restart: unless-stopped
-    volumes:
-      - ./data/prometheus/config:/etc/prometheus/
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yaml'
-    ports:
-      - 9091:9090
-    depends_on:
-      - spring-app
  # Spring Boot Application Service
   spring-app:
     image: amenbenkhalifa/devops_project1:SpringImage
@@ -42,24 +29,6 @@ services:
       - "8282:8282"
     depends_on:
       - mysql
-
-  grafana:
-    image: grafana/grafana
-    network_mode: host
-    container_name: grafana
-    restart: unless-stopped
-    volumes:
-      - ./data/grafana:/var/lib/grafana
-    ports:
-      - 3001:3000
-    environment:
-      GF_INSTALL_PLUGINS: grafana-piechart-panel
-      GF_SECURITY_ADMIN_PASSWORD: grafana
-    depends_on:
-       - prometheus
-
-
-
   # Angular Application Service
   angular-app:
     image: amenbenkhalifa/devops_project1:AngularImage

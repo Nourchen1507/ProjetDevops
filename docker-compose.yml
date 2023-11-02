@@ -14,7 +14,7 @@ services:
 
   # Spring Boot Application Service
   spring-app:
-    image: nourchenh/springbootachat:latest
+    image: nourchenh/projectdevopsspring:ImageSpringboot
     container_name: spring
     restart:  on-failure
     environment:

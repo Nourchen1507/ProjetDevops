@@ -43,14 +43,15 @@ services:
       - mysql
   # Grafana Service
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:latest
+    container_name: grafana
     ports:
       - 3001:3000
+    volumes:
+      - ./grafana_data:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-piechart-panel
-      GF_SECURITY_ADMIN_PASSWORD: your-password
-    depends_on:
-      - prometheus
+      GF_SECURITY_ADMIN_PASSWORD: grafana
   # Angular Application Service
   angular-app:
     image: amenbenkhalifa/devops_project1:AngularImage

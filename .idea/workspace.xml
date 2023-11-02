@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cea9328-66cc-42c6-b2da-e40cc7e5b82d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prometheus.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
@@ -176,7 +175,7 @@
       <workItem from="1698333861140" duration="273000" />
       <workItem from="1698452754112" duration="1469000" />
       <workItem from="1698678809563" duration="5305000" />
-      <workItem from="1698871694791" duration="17061000" />
+      <workItem from="1698871694791" duration="17843000" />
     </task>
     <servers />
   </component>

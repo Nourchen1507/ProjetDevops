@@ -47,8 +47,6 @@ services:
     container_name: grafana
     ports:
       - 3001:3000
-    volumes:
-      - /chemin/local/vers/var/lib/grafana:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-piechart-panel
       GF_SECURITY_ADMIN_PASSWORD: grafana

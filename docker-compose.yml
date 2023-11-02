@@ -26,7 +26,7 @@ services:
     depends_on:
       - mysql
   angular-app:
-    image: nourchenh/achat1:FrontImage
+    image: nourchenh/projectdevopsspring:ImageAngular
     container_name: angular
     restart: on-failure
     ports:

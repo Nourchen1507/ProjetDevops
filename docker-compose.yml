@@ -20,7 +20,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
-      - 9091:9090
+      - 9090:9090
     depends_on:
       - spring-app
  # Spring Boot Application Service
@@ -46,7 +46,7 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     ports:
-      - 3001:3000
+      - 3000:3000
     environment:
       GF_INSTALL_PLUGINS: grafana-piechart-panel
       GF_SECURITY_ADMIN_PASSWORD: grafana

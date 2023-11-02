@@ -3,11 +3,12 @@ global:
 
 scrape_configs:
   - job_name: 'prometheus'
+    metrics_path: /actuator/prometheus
     static_configs:
-      - targets: ['172.17.0.1:8282']
+      - targets: ['192.168.1.151:8282']
 
   - job_name: 'jenkins'
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['172.17.0.1:8080']
+      - targets: ['192.168.1.151:8080']
 

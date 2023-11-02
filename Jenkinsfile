@@ -11,7 +11,7 @@ pipeline {
 
         stage('Nettoyage et compilation avec Maven') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean install'
             }
         }
 

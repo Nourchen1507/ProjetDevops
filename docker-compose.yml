@@ -10,7 +10,7 @@ services:
       - mysql_data:/var/lib/mysql
 
     environment:
-      MYSQL_ROO_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: achatdb
     networks:
       - mynetworkk

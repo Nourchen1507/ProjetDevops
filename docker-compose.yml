@@ -25,13 +25,6 @@ services:
       - "8282:8282"
     depends_on:
       - mysql
-  angular-app:
-    image: nourchenh/projectdevopsspring:ImageAngular
-    container_name: angular
-    restart: on-failure
-    ports:
-      - "4200:80"
-    depends_on:
-      - spring-app
+
 volumes:
   db:

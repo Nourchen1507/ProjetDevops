@@ -48,10 +48,11 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - ./grafana_data:/var/lib/grafana
+      - /chemin/local/vers/var/lib/grafana:/var/lib/grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-piechart-panel
       GF_SECURITY_ADMIN_PASSWORD: grafana
+    restart: always
   # Angular Application Service
   angular-app:
     image: amenbenkhalifa/devops_project1:AngularImage

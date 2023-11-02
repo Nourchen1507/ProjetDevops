@@ -2,11 +2,12 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: jenkins
-        metrics_path: /prometheus
-        static_configs:
-          - targets: [ '172.17.0.1:8080' ]
   - job_name: 'prometheus'
     static_configs:
       - targets: ['172.17.0.1:8282']
+
+  - job_name: 'jenkins'
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['172.17.0.1:8080']
 

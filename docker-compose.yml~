@@ -37,11 +37,18 @@ services:
   front:
     depends_on:
       - back
-    image: skander99/front-1.0
+    image: skander99/achat-1.0.jar
+    container_name: front
+    restart: on-failure
     ports:
       - "80:80"
-    networks:
-      - mynetworkk
+    stdin_open: true
+    tty: true
+    environment:
+      MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED: "true"
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: prometheus
+      networks:
+        - mynetworkk
 volumes:
   mysql_data:
 networks:

@@ -28,8 +28,8 @@ tn/esprit/rh/achat/services/FactureServiceImpl.class
 tn/esprit/rh/achat/repositories/SecteurActiviteRepository.class
 tn/esprit/rh/achat/services/ReglementServiceImpl.class
 tn/esprit/rh/achat/entities/Operateur.class
+tn/esprit/rh/achat/CorsConfig.class
 tn/esprit/rh/achat/controllers/FactureRestController.class
-tn/esprit/rh/achat/WebConfig.class
 tn/esprit/rh/achat/controllers/ProduitRestController.class
 tn/esprit/rh/achat/entities/Facture.class
 tn/esprit/rh/achat/repositories/ProduitRepository.class

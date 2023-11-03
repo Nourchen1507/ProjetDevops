@@ -16,7 +16,6 @@
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/SecteurActiviteServiceImpl.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/FactureServiceImpl.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/controllers/CategorieProduitController.java
-/home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/WebConfig.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/repositories/FactureRepository.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/ISecteurActiviteService.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/controllers/SecteurActiviteController.java
@@ -31,6 +30,7 @@
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/ICategorieProduitService.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/repositories/ProduitRepository.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/IFournisseurService.java
+/home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/CorsConfig.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/services/FournisseurServiceImpl.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/AchatApplication.java
 /home/vagrant/gitworkshop/ProjetDevops/src/main/java/tn/esprit/rh/achat/entities/CategorieFournisseur.java

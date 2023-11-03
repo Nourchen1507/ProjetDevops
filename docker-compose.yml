@@ -23,7 +23,7 @@ services:
       SPRING_APPLICATION_JSON: '{
   "spring.datasource.url": "jdbc:mysql://mysqldb:3306/achat_db?createDatabaseIfNotExist=true",
   "spring.datasource.username": "root",
-  "spring.datasource.password": null,
+  "spring.datasource.password": "root",
   "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
   "spring.jpa.hibernate.ddl-auto": "update"
 }'

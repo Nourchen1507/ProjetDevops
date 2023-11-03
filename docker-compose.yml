@@ -30,12 +30,16 @@ services:
       SPRING_DATASOURCE_PASSWORD: ""
 
   angular-frontend:
-    build:
-      context: C:\Users\Administrator\Desktop\crud-tuto-front
-      dockerfile: Dockerfile  # Name of the Dockerfile for the Angular app
+    image: 23153122e351/front:v2
     container_name: angular-frontend
     networks:
       - mon_reseau
     ports:
       - "4200:4200"  # Adjust the port as needed for your Angular app
-    command: npm start
+
+networks:
+  mon_reseau:
+    driver: bridge
+
+volumes:
+  mysql_data:

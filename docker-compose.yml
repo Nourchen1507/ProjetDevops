@@ -31,6 +31,12 @@ services:
     stdin_open: true
     tty: true
 
-
+  front:
+    image: frontaziz
+    restart: on-failure
+    ports:
+      - 8082:4200
 volumes:
   db:
+
+

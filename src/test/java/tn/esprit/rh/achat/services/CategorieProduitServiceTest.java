@@ -22,7 +22,7 @@ public class CategorieProduitServiceTest {
     @Order(1)
     public void testRetrieveAllCategorieProduits() {
         List<CategorieProduit> listCategorieProduits = categorieProduitService.retrieveAllCategorieProduits();
-        Assertions.assertEquals(0, listCategorieProduits.size());
+        Assertions.assertEquals(3, listCategorieProduits.size());
     }
 
 

@@ -38,7 +38,7 @@ services:
     image: frontaziz
     restart: on-failure
     ports:
-      - 8082:4200
+      - 4200:4200
     networks:
       - mynetworkk
 volumes:

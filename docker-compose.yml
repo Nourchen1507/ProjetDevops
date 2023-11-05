@@ -3,6 +3,7 @@ version: "3.8"
 services:
   mysqldb:
     image: mysql:5.7
+    container_name: mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -17,6 +18,7 @@ services:
     depends_on:
       - mysqldb
     image: aziz64/achat:1.0.0
+    container_name: backend
     restart: on-failure
     ports:
       - 8089:8089
@@ -36,7 +38,10 @@ services:
 
   front:
     image: frontaziz
+    container_name: frontend
     restart: on-failure
+    depends_on:
+      - achat-backend
     ports:
       - 8082:4200
     networks:

@@ -1,14 +1,6 @@
 
 ~
 java:S1488o"cImmediately return this expression instead of assigning it to the temporary variable "pourcentage".(œòô”üÿÿÿÿ
-f
-java:S2259`"IA "NullPointerException" could be thrown; "fournisseur" is nullable here.(™ÙÖµ8í—å¸1
-d
-java:S2259g"GA "NullPointerException" could be thrown; "operateur" is nullable here.(¾„Ÿè8ì—å¸1
-T
-java:S36557"7Call "Optional#isPresent()" before accessing the value.(Š„™³8ï—å¸1
-D
-java:S1905""'Remove this unnecessary cast to "List".(Õà …8ˆ‘—å¸1
 Q	java:S125M"<This block of commented-out lines of code should be removed.(°¦¥˜
 L
 java:S11442"6Remove this unused private "addDetailsFacture" method.(Á¥²ù

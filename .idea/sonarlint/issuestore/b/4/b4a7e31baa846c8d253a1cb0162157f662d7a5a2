@@ -1,13 +1,9 @@
 
-±
-java:S3577"”Rename class "FactureServiceImpMock" to match the regular expression: '^((Test|IT)[a-zA-Z0-9_]+|[A-Z][a-zA-Z0-9_]*(Test|Tests|TestCase|IT|ITCase))$'(•¡ı8Í‘¹1
-;
-java:S5786'"Remove this 'public' modifier.(øÓøÏ8ƒÍ‘¹1
-@
-java:S5786."Remove this 'public' modifier.(¼«ãùÿÿÿÿ8„Í‘¹1
-;
-java:S57864"Remove this 'public' modifier.(ÊÇéš8…Í‘¹1
-@
-java:S5786D"Remove this 'public' modifier.(£øú·ıÿÿÿÿ8†Í‘¹1
-:
-java:S5786"Remove this 'public' modifier.(•¡ı8†Í‘¹1
+N
+java:S3599 ",Use another way to initialize this instance.(õÊÈúÿÿÿÿ8•¶ˆƒº1
+{
+java:S1171!"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8˜¶ˆƒº1
+]
+java:S11170"@Rename "listFactures" which hides the field declared at line 32.(ÿáÈ°8¶ˆƒº1
+]
+java:S11176";Rename "facture" which hides the field declared at line 29.(îğ—´ıÿÿÿÿ8¶ˆƒº1

@@ -35,8 +35,6 @@ services:
     tty: true
 
   front:
-    depends_on:
-      - achat-backend
     image: frontaziz
     restart: on-failure
 

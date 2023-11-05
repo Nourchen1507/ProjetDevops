@@ -29,7 +29,7 @@ services:
   "spring.jpa.hibernate.ddl-auto": "update"
 }'
     networks:
-      - net
+      - mynetworkk
 
     stdin_open: true
     tty: true
@@ -37,14 +37,13 @@ services:
   front:
     image: frontaziz
     restart: on-failure
-
     ports:
       - 8082:4200
     networks:
-      - net
+      - mynetworkk
 volumes:
   db:
 networks:
-  net:
-
+  mynetworkk:
+    driver: bridge
 

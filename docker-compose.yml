@@ -29,7 +29,7 @@ services:
   "spring.jpa.hibernate.ddl-auto": "update"
 }'
     networks:
-      - mynetworkk
+      - net
 
     stdin_open: true
     tty: true
@@ -41,10 +41,10 @@ services:
     ports:
       - 8082:4200
     networks:
-      - mynetworkk
+      - net
 volumes:
   db:
 networks:
-  mynetworkk:
-    driver: bridge
+  net:
+
 

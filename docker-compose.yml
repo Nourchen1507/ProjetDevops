@@ -11,11 +11,7 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
-    networks:
-      - mynetwork
   achat-backend:
-    networks:
-      - mynetwork
     depends_on:
       - mysqldb
     image: aziz64/achat:1.0.0
@@ -36,15 +32,12 @@ services:
     tty: true
 
   front:
-    image: frontaziz
+    image: frontend-achat
     restart: on-failure
     ports:
       - 4200:4200
-    networks:
-      - mynetwork
 volumes:
   db:
-networks:
-  mynetwork:
+
 
 

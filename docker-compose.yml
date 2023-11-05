@@ -11,7 +11,8 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
-
+    networks:
+      - mynetworkk
   achat-backend:
     depends_on:
       - mysqldb
@@ -27,6 +28,8 @@ services:
   "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
   "spring.jpa.hibernate.ddl-auto": "update"
 }'
+    networks:
+      - mynetworkk
 
     stdin_open: true
     tty: true
@@ -36,7 +39,11 @@ services:
     restart: on-failure
     ports:
       - 8082:4200
+    networks:
+      - mynetworkk
 volumes:
   db:
-
+networks:
+  mynetworkk:
+    driver: bridge
 

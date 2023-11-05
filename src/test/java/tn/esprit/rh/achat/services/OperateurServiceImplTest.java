@@ -41,5 +41,32 @@ public class OperateurServiceImplTest {
         Assertions.assertNotNull(operateur1);
     }
 
-    // Ajoutez d'autres méthodes de test pour les autres opérations du service Operateur.
+    @Test
+    public void testAddOperateur() {
+        Mockito.when(operateurRepository.save(Mockito.any(Operateur.class))).thenReturn(operateur);
+        Operateur newOperateur = new Operateur(4L, "NewNom", "NewPrenom", "NewPassword", null);
+        Operateur addedOperateur = operateurServiceImpl.addOperateur(newOperateur);
+        Assertions.assertNotNull(addedOperateur);
+        Assertions.assertEquals(4L, addedOperateur.getIdOperateur());
+    }
+
+    @Test
+    public void testDeleteOperateur() {
+        Mockito.doNothing().when(operateurRepository).deleteById(Mockito.anyLong());
+        operateurServiceImpl.deleteOperateur(3L);
+        Mockito.verify(operateurRepository, Mockito.times(1)).deleteById(3L);
+    }
+
+    @Test
+    public void testUpdateOperateur() {
+        Mockito.when(operateurRepository.save(Mockito.any(Operateur.class))).thenReturn(operateur);
+        Operateur updatedOperateur = new Operateur(1L, "UpdatedNom", "UpdatedPrenom", "UpdatedPassword", null);
+        Operateur result = operateurServiceImpl.updateOperateur(updatedOperateur);
+        Assertions.assertEquals("UpdatedNom", result.getNom());
+        Assertions.assertEquals("UpdatedPrenom", result.getPrenom());
+        Assertions.assertEquals("UpdatedPassword", result.getPassword());
+    }
+
+
+
 }
